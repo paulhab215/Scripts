@@ -1,23 +1,18 @@
 #!/usr/bin/php
 <?php
 //
-// This shell script loops through a directory and replaces a line within the same file in each 
-// directoy with both the original line and an additional line
-//
-
-//
 // Build Base Directories to search
 //
 $base_directory = "/home/web/accounts/";
 
 $files = scandir($base_directory);
 
-//any directories that should be ignored
+//any directory that should be ignored
 $exclude_files = "";
 $exclude_files[] = ".";
 $exclude_files[] = "..";
-$exclude_files[] = "global";
-$exclude_files[] = "ZipCodes";
+$exclude_files[] = ".svn";
+$exclude_files[] = "routines";
 
 $account_list = array_diff($files,$exclude_files);
 
@@ -48,3 +43,4 @@ function replace_a_line($data) {
    	}
    return $data;
 }
+?>
