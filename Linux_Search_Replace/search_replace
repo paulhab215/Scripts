@@ -1,0 +1,1 @@
+find ./*/application/documents/doc/ -name "*.rtf" -type f -exec sed -i 's/<!DISP.TYPE!>/<!DISP.TYPE-N!>/g' {} \;
